@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mi App</title>
+
+    <!-- PWA Meta tags -->
+    <meta name="theme-color" content="#ec4899">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- iOS support -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Mi App">
+    <link rel="apple-touch-icon" href="icon.svg">
+
+    <!-- Fonts: Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="app-header">
+        <h1 id="header-title">Inicio</h1>
+    </header>
+
+    <main class="app-content">
+        <!-- Sections -->
+        <section id="notificaciones" class="page-section active">
+            <h2>Notificaciones</h2>
+            <p>Aquí verás tus notificaciones recientes.</p>
+        </section>
+
+        <section id="mantenimiento" class="page-section">
+            <h2>Mantenimiento</h2>
+            <p>Sección para tareas de mantenimiento.</p>
+        </section>
+
+        <section id="agenda" class="page-section">
+            <h2>Agenda</h2>
+            <p>Tu calendario y eventos programados.</p>
+        </section>
+
+        <section id="salud" class="page-section">
+            <h2>Salud</h2>
+            <p>Seguimiento de tu salud y bienestar.</p>
+        </section>
+
+        <section id="ajustes" class="page-section">
+            <h2>Ajustes</h2>
+            <p>Configura tu aplicación aquí.</p>
+        </section>
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <button class="nav-item active" data-target="notificaciones">
+            <span class="icon">🔔</span>
+            <span class="label">Notificaciones</span>
+        </button>
+        <button class="nav-item" data-target="mantenimiento">
+            <span class="icon">🛠️</span>
+            <span class="label">Mantenimiento</span>
+        </button>
+        <button class="nav-item" data-target="agenda">
+            <span class="icon">📅</span>
+            <span class="label">Agenda</span>
+        </button>
+        <button class="nav-item" data-target="salud">
+            <span class="icon">❤️</span>
+            <span class="label">Salud</span>
+        </button>
+        <button class="nav-item" data-target="ajustes">
+            <span class="icon">⚙️</span>
+            <span class="label">Ajustes</span>
+        </button>
+    </nav>
+
+    <!-- App Logic & Service Worker Registration -->
+    <script src="app.js"></script>
+</body>
+</html>
