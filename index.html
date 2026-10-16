@@ -52,7 +52,48 @@
 
         <section id="ajustes" class="page-section">
             <h2>Ajustes</h2>
-            <p>Configura tu aplicación aquí.</p>
+
+            <div class="settings-group">
+                <h3>Perfil y Cuenta</h3>
+                <div class="form-group">
+                    <label for="profile-name">Nombre / Apodo</label>
+                    <input type="text" id="profile-name" placeholder="Tu nombre">
+                </div>
+                <div class="form-group">
+                    <label for="profile-phone">Teléfono de Emergencia</label>
+                    <input type="tel" id="profile-phone" placeholder="Ej: +34 600 000 000">
+                </div>
+                <div class="form-group">
+                    <label for="profile-notes">Notas Personales</label>
+                    <textarea id="profile-notes" placeholder="Alergias, tipo de sangre, etc." rows="3"></textarea>
+                </div>
+                <button id="save-profile" class="btn btn-primary">Guardar Perfil</button>
+            </div>
+
+            <div class="settings-group">
+                <h3>Seguridad y Face ID</h3>
+                <div class="setting-item">
+                    <span>Bloqueo con Face ID / Biometría</span>
+                    <label class="switch">
+                        <input type="checkbox" id="biometric-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <button id="access-sensitive-data" class="btn btn-secondary mt-2">Acceder a Documentos Sensibles</button>
+                <p id="auth-status" class="status-msg"></p>
+            </div>
+
+            <div class="settings-group">
+                <h3>Gestión de Datos</h3>
+                <button id="export-data" class="btn btn-secondary">Exportar Datos (Backup)</button>
+
+                <div class="import-wrapper">
+                    <label for="import-data" class="btn btn-secondary">Importar Datos</label>
+                    <input type="file" id="import-data" accept=".json" style="display: none;">
+                </div>
+
+                <button id="delete-data" class="btn btn-danger">Borrar Todos los Datos</button>
+            </div>
         </section>
     </main>
 
