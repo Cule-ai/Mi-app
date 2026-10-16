@@ -75,6 +75,139 @@ body {
     line-height: 1.5;
 }
 
+/* Forms & Lists */
+.app-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.app-form input, .app-form select {
+    padding: 0.75rem;
+    border: 1px solid var(--nav-border);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.app-form input:focus, .app-form select:focus {
+    border-color: var(--primary-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-align: center;
+}
+
+.btn-primary:active {
+    background-color: var(--primary-dark);
+}
+
+.btn-upload {
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.record-card, .task-card, .notification-card {
+    background-color: var(--bg-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.record-info h4, .task-info h4, .notification-info h4 {
+    margin-bottom: 0.25rem;
+    color: var(--text-main);
+}
+
+.record-info p, .task-info p, .notification-info p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.record-days {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.record-days.urgent {
+    color: #ef4444; /* red for urgent */
+}
+
+.btn-delete {
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.25rem;
+}
+
+.empty-msg {
+    text-align: center;
+    font-style: italic;
+}
+
+/* Gallery */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    aspect-ratio: 1;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item .btn-delete-img {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+    background-color: rgba(255,255,255,0.8);
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ef4444;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
 /* Settings Styles */
 .settings-group {
     margin-bottom: 2rem;
@@ -122,8 +255,25 @@ body {
     border-color: var(--primary-color);
 }
 
-/* Buttons */
-.btn {
+.btn-secondary {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 0.75rem;
+    transition: opacity 0.2s;
+}
+
+.btn-danger {
+    background-color: #ef4444;
+    color: white;
     display: block;
     width: 100%;
     padding: 0.75rem;
@@ -135,27 +285,6 @@ body {
     text-align: center;
     margin-bottom: 0.75rem;
     transition: opacity 0.2s;
-}
-
-.btn:active {
-    opacity: 0.8;
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.btn-secondary {
-    background-color: var(--bg-color);
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
-}
-
-.btn-danger {
-    background-color: #ef4444;
-    color: white;
-    margin-top: 1.5rem;
 }
 
 .mt-2 {

@@ -32,22 +32,46 @@
         <!-- Sections -->
         <section id="notificaciones" class="page-section active">
             <h2>Notificaciones</h2>
-            <p>Aquí verás tus notificaciones recientes.</p>
+            <div id="notificaciones-list" class="list-container">
+                <p class="empty-msg">No hay notificaciones recientes.</p>
+            </div>
         </section>
 
         <section id="mantenimiento" class="page-section">
             <h2>Mantenimiento</h2>
-            <p>Sección para tareas de mantenimiento.</p>
+            <form id="mantenimiento-form" class="app-form">
+                <select id="mant-category" required>
+                    <option value="" disabled selected>Categoría (Vehículo o Mascota)</option>
+                    <option value="vehiculo">Vehículo (ITV, seguro, revisión)</option>
+                    <option value="mascota">Mascota (Cita, vacuna)</option>
+                </select>
+                <input type="text" id="mant-name" placeholder="Nombre/Descripción (ej: Coche ITV)" required>
+                <input type="date" id="mant-date" required>
+                <button type="submit" class="btn-primary">Añadir Registro</button>
+            </form>
+            <div id="mantenimiento-list" class="list-container"></div>
         </section>
 
         <section id="agenda" class="page-section">
             <h2>Agenda</h2>
-            <p>Tu calendario y eventos programados.</p>
+            <form id="agenda-form" class="app-form">
+                <input type="text" id="agenda-title" placeholder="Título de la cita" required>
+                <input type="date" id="agenda-date" required>
+                <input type="time" id="agenda-time" required>
+                <button type="submit" class="btn-primary">Crear Cita</button>
+            </form>
+            <div id="agenda-list" class="list-container"></div>
         </section>
 
         <section id="salud" class="page-section">
             <h2>Salud</h2>
-            <p>Seguimiento de tu salud y bienestar.</p>
+            <div class="salud-actions">
+                <label for="salud-upload" class="btn-primary btn-upload">
+                    Adjuntar / Escanear Documento
+                </label>
+                <input type="file" id="salud-upload" accept="image/*" capture="environment" style="display: none;">
+            </div>
+            <div id="salud-gallery" class="gallery-container"></div>
         </section>
 
         <section id="ajustes" class="page-section">
@@ -67,7 +91,7 @@
                     <label for="profile-notes">Notas Personales</label>
                     <textarea id="profile-notes" placeholder="Alergias, tipo de sangre, etc." rows="3"></textarea>
                 </div>
-                <button id="save-profile" class="btn btn-primary">Guardar Perfil</button>
+                <button id="save-profile" class="btn-primary">Guardar Perfil</button>
             </div>
 
             <div class="settings-group">
@@ -79,20 +103,20 @@
                         <span class="slider round"></span>
                     </label>
                 </div>
-                <button id="access-sensitive-data" class="btn btn-secondary mt-2">Acceder a Documentos Sensibles</button>
+                <button id="access-sensitive-data" class="btn-secondary mt-2">Acceder a Documentos Sensibles</button>
                 <p id="auth-status" class="status-msg"></p>
             </div>
 
             <div class="settings-group">
                 <h3>Gestión de Datos</h3>
-                <button id="export-data" class="btn btn-secondary">Exportar Datos (Backup)</button>
+                <button id="export-data" class="btn-secondary">Exportar Datos (Backup)</button>
 
                 <div class="import-wrapper">
-                    <label for="import-data" class="btn btn-secondary">Importar Datos</label>
+                    <label for="import-data" class="btn-secondary" style="display: block; text-align: center;">Importar Datos</label>
                     <input type="file" id="import-data" accept=".json" style="display: none;">
                 </div>
 
-                <button id="delete-data" class="btn btn-danger">Borrar Todos los Datos</button>
+                <button id="delete-data" class="btn-danger mt-2">Borrar Todos los Datos</button>
             </div>
         </section>
     </main>
